@@ -441,3 +441,56 @@ h6,
 .footer .footer-menu a:hover {
     color: var(--secondary);
 }
+
+.fixed-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 999;
+}
+
+.fixed-buttons a {
+    width: 50%; /* كل زر ياخد نص الشاشة */
+    height: 60px;
+    background-color: #25d366; /* لون الواتساب */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.fixed-buttons a.phone {
+    background-color: #007bff; /* لون الاتصال */
+}
+
+.fixed-buttons a svg {
+    width: 30px;
+    height: 30px;
+    animation: pulse 2s infinite; /* إضافة أنيميشن للأيقونات */
+}
+
+/* أنيميشن النبض للأيقونات */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* إخفاء الأزرار على الشاشات الأكبر من الموبايل */
+@media (min-width: 768px) {
+    .fixed-buttons {
+        display: none;
+    }
+}
